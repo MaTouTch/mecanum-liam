@@ -4,7 +4,8 @@
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "microphone": "*"
+        "microphone": "*",
+        "pxt-mecanum-robot": "github:keyestudio2019/mecanum_robot#v1.1.3"
     },
     "files": [
         "main.blocks",
