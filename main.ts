@@ -3,12 +3,12 @@ radio.onReceivedString(function (receivedString) {
         if (_switch == 0) {
             mecanumRobot.setServo(60)
             _switch = 1
-            basic.pause(LagMove)
+            basic.pause(500)
             mecanumRobot.setServo(90)
         } else {
             mecanumRobot.setServo(120)
             _switch = 0
-            basic.pause(LagMove)
+            basic.pause(500)
             mecanumRobot.setServo(90)
         }
     } else if (receivedString == "N") {
@@ -82,7 +82,7 @@ let _switch = 0
 radio.setGroup(1)
 radio.sendString("Mecanum")
 _switch = 0
-LagMove = 50
+LagMove = 20
 mecanumRobot.setServo(60)
 basic.pause(1000)
 mecanumRobot.setServo(120)
