@@ -2,17 +2,36 @@ radio.onReceivedString(function (receivedString) {
     if (receivedString == "D") {
         if (_switch == 0) {
             mecanumRobot.setServo(60)
-            basic.showNumber(0)
             _switch = 1
         } else {
             mecanumRobot.setServo(120)
-            basic.showNumber(1)
             _switch = 0
         }
-    } else if (receivedString == "U") {
+    } else if (receivedString == "N") {
         mecanumRobot.Motor(LR.Upper_left, MD.Forward, 100)
         mecanumRobot.Motor(LR.Upper_right, MD.Forward, 100)
         mecanumRobot.Motor(LR.Lower_left, MD.Forward, 100)
+        mecanumRobot.Motor(LR.Lower_right, MD.Forward, 100)
+        basic.pause(LagMove)
+        mecanumRobot.state(MotorState.stop)
+    } else if (receivedString == "S") {
+        mecanumRobot.Motor(LR.Upper_left, MD.Back, 100)
+        mecanumRobot.Motor(LR.Upper_right, MD.Back, 100)
+        mecanumRobot.Motor(LR.Lower_left, MD.Back, 100)
+        mecanumRobot.Motor(LR.Lower_right, MD.Back, 100)
+        basic.pause(LagMove)
+        mecanumRobot.state(MotorState.stop)
+    } else if (receivedString == "L") {
+        mecanumRobot.Motor(LR.Upper_left, MD.Back, 100)
+        mecanumRobot.Motor(LR.Upper_right, MD.Forward, 100)
+        mecanumRobot.Motor(LR.Lower_left, MD.Forward, 100)
+        mecanumRobot.Motor(LR.Lower_right, MD.Back, 100)
+        basic.pause(LagMove)
+        mecanumRobot.state(MotorState.stop)
+    } else if (receivedString == "R") {
+        mecanumRobot.Motor(LR.Upper_left, MD.Forward, 100)
+        mecanumRobot.Motor(LR.Upper_right, MD.Back, 100)
+        mecanumRobot.Motor(LR.Lower_left, MD.Back, 100)
         mecanumRobot.Motor(LR.Lower_right, MD.Forward, 100)
         basic.pause(LagMove)
         mecanumRobot.state(MotorState.stop)
